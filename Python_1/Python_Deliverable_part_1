@@ -1,32 +1,40 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
 #import data from CSV
 df=pd.read_csv('D:/Casafari/assignment_data.csv',sep=',')
+
 
 #lower case to title and feature columns to best filter
 df.loc[:,"title"]=df.loc[:,"title"].str.lower()
 df.loc[:,"features"]=df.loc[:,"features"].str.lower()
 df["title"]=df.loc[:,"title"].str.replace("nagüeles","nagueles")
 
+
 #Number of NAN registers
 print("Number of NAN registers in features = "+str(sum(pd.isnull(df['features']))))
 print("Number of NAN registers in title = "+str(sum(pd.isnull(df['title']))))
 
+
 #drop lines with NAN in features column
 df=df.dropna(axis=0, subset=['features'])
+
 
 #create garage dummy column
 df.loc[:,"pool"] = df.features.str.contains("pool")
 df.pool=df.pool.astype(int)
 
+
 #create garage dummy column
 df.loc[:,"sea_view"] = df.features.str.contains("sea view")
 df.sea_view=df.sea_view.astype(int)
 
+
 #create garage dummy column
 df.loc[:,"garage"] = df.features.str.contains("garage")
 df.garage=df.garage.astype(int)
+
 
 #create location column
 location=[]   
@@ -35,10 +43,10 @@ for n in list(df.index):
          location.append("Alenquer")
     elif "quinta da marinha" in df.loc[n,"title"]:
          location.append("Quinta da Marinha")
+    elif "nagueles" in df.loc[n,"title"]:
+         location.append("Nagüeles") 
     elif "golden mile" in df.loc[n,"title"]:
          location.append("Golden Mile")
-    elif "nagueles" in df.loc[n,"title"]:
-         location.append("Nagüeles")        
 
 df.loc[:,"location"]=location
 
@@ -51,9 +59,7 @@ for n in list(df.index):
     elif ("penthouse") in df.loc[n,"title"]:
          type.append("apartments")
     elif ("duplex") in df.loc[n,"title"]:
-         type.append("apartments")
-#    else:
-#        type.append("x")       
+         type.append("apartments")  
     elif ("house") in df.loc[n,"title"]:
          type.append("houses")  
     elif ("villa") in df.loc[n,"title"]:
@@ -74,26 +80,18 @@ for n in list(df.index):
 df.loc[:,"type"]=type
 
 
-#type2=[]   
-#for n in list(df.index):
-#    for m in ["apartment","penthouse","duplex"]:
-#        if m in df.loc[n,"title"]:
-#             type2.append("apartments")
-#        else:
-#            type2.append("x")
-
+#delete other type registers
 df = df[df.type != "other"]
+
 
 #create table to export
 deliverable1=df.loc[:,["id","location","type","title","features","pool","sea_view","garage"]]
 
+
 #change columns names
 deliverable1.columns=["id", "location name", "type", "title", "features", "pool (0/1)", "sea view (0/1)", "garage (0/1)"]
 
-#deliverable1.columns
-#deliverable1.head(20)
 
 #export table to CSV
 df.to_csv('D:/Casafari/deliverable1.csv',sep=',', encoding='utf-8', index=False)
-
 
