@@ -22,5 +22,10 @@ Due to gread number of intersections to group similar houses, some subset may be
 extracted from them.
 Registers with missing values can be deleted if missing information is essencial to the analysis (p.e. if the location in unknown,
 there is no point in used that register).
-Outliers can be used or deleted. It depends on if that value is correct or if is an error. It is necessary to understand its origin.
+Outliers can be used or deleted. It depends on if that value is correct (unusual but correct) or if is an error (incorrect value input 
+in data file). It is necessary to understand its origin.
+If duplicated data exists (same property listing published by different agencies), those registers have to be merge in a single register.
+The price value of this new register can be obtained by the average of the duplicated ones.
+
+
 
