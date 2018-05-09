@@ -93,5 +93,5 @@ deliverable1.columns=["id", "location name", "type", "title", "features", "pool 
 
 
 #export table to CSV
-df.to_csv('D:/Casafari/deliverable1.csv',sep=',', encoding='utf-8', index=False)
+deliverable1.to_csv('D:/Casafari/deliverable1.csv',sep=',', encoding='utf-8', index=False)
 
