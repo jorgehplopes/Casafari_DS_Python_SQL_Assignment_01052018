@@ -1,0 +1,23 @@
+The "under-valued", "over-valued" and "normal" labels were obtained by comparing, for each property, their price_per_area with
+the average price_per_area for similar properties.
+
+Were defined and calculated average price_per_area for each property types (apartments, houses and plots) in each location 
+(Alenquer, Quinta da Marinha, Golden Mile and Nagüeles). Thus, it was calculated 3 x 4 = 12 average price_per_area, which were compared 
+with each property price_per_area.
+
+It was defined that properties are over-valued if their price_per_area is 15% higher than the average price_per_area for similar properties.
+Properties are under-valued if their price_per_area is 15% lower than the average price_per_area for similar properties.
+Then, in between, the are the normal valuated properties.
+
+It was assumed that a flunctuation of 15% over the average price_per_area was the best value to define "under-valued", "over-valued" and 
+"normal" valuations.
+
+Outliers are different from "under-valued", "over-valued". While "under-valued" and "over-valued" properties assume possible and logic 
+values for their price_per_area, outliers are registers which price_per_area is far above or far below from average price and, thus,
+distant (very different) from other price_per_area.
+Outliers may come from unusual but correct situations (if the property has a historic value) or incorrect value input in data file.
+
+
+
+
+
