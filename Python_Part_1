@@ -1,0 +1,15 @@
+- Classify the type of each listing:
+
+The classification of the type of each listing was performed by "in" string search command over the "title" column.
+Before that, a pre-processing step was performed, in order to avoid futher problems in classification, which includes:
+  - delete all empty "title" regsiters, 
+  - lower case the entire column,
+  - replace special characters.
+Can be some problems with this procedure if the description of the property was miswrite in the file, p.e., "vila" instead of "villa".
+
+
+
+- Classify the location of each listing:
+
+The procedure was very simiar to type classification descrive above. The search was also performed over the "title" column.
+Can be some problems with this procedure if the description of the property was miswrite in the file, p.e., "Quinta Marinha" instead "Quinta da Marinha".
