@@ -12,6 +12,15 @@ It was decided to eliminate those registers. Moreover, prices equal to zero are 
 
 
 2)
-To asses price impact of of features such as sea view, pool and garage it is necessary to compare very similar properties (same location,
-same type and similar area) with and without the feature 
+To asses price impact of features such as sea view, pool and garage it is necessary to compare very similar properties (same location,
+same type and similar area) with and without the feature under analysis.
+Dataset already has location and type label for each property.
+Next step whould be classify the properties by area. This classification can be done by creating bins and classify each property 
+(p.e. 0-25, 25-50, 50-75, 75-100,...)
+Than, for each subset of "location x type x area" calculate the mean price for properties with and without the feature under analysis.
+Due to gread number of intersections to group similar houses, some subset may be very small and no reliable information can be 
+extracted from them.
+Registers with missing values can be deleted if missing information is essencial to the analysis (p.e. if the location in unknown,
+there is no point in used that register).
+Outliers can be used or deleted. It depends on if that value is correct or if is an error. It is necessary to understand its origin.
 
