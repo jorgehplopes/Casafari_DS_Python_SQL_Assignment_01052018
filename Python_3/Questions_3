@@ -1,1 +1,17 @@
+1)
+It was found in dataset 941 missing values in "features" column. Since it is an array type column, it was decided to delete those 
+registers for the first exercise.
+
+it was found descriptions in "features" column which include both Nagueles and Golden Mile, p.e., "villa for sale in rocio de nagueles, 
+marbella golden mile" or "contemporary villa in nagueles golden mile".
+Being Nagueles part of a hidder region called Golden Mile, it was decided first classify properties with Nagueles label and then 
+classify the reminding properties with Golden Mile label.
+
+It was found several prices and areas equal to zero. Zero values can cause inconsistencies in divisions such as price_per_area = price / area. 
+It was decided to eliminate those registers. Moreover, prices equal to zero are not useful for price analysis.
+
+
+2)
+To asses price impact of of features such as sea view, pool and garage it is necessary to compare very similar properties (same location,
+same type and similar area) with and without the feature 
 
