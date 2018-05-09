@@ -10,10 +10,11 @@ for n in list(df.index):
          location.append("Alenquer")
     elif "quinta da marinha" in df.loc[n,"title"]:
          location.append("Quinta da Marinha")
+    elif "nagueles" in df.loc[n,"title"]:
+         location.append("Nagüeles")  
     elif "golden mile" in df.loc[n,"title"]:
          location.append("Golden Mile")
-    elif "nagueles" in df.loc[n,"title"]:
-         location.append("Nagüeles")        
+      
 df.loc[:,"location"]=location
 #create type column
 type=[]   
@@ -106,7 +107,7 @@ df.loc[:,"loc_type_mean_price"]=loc_type_mean_price
 over_valued=[]
 under_valued=[]
 normal=[]
-valued_factor=0.25
+valued_factor=0.15
 
 for n in list(df.index):
     if (df.loc[n,"price_area"]>(1+valued_factor)*df.loc[n,"loc_type_mean_price"]):
@@ -306,8 +307,5 @@ ax.text(5000, 3.25, 'Plots', fontsize=15)
 plt.xlabel("Price per area", fontsize=14)
 plt.ylabel("Types", fontsize=14)
 plt.suptitle("Price per Area by Types", fontsize=18)
-
-
-
 
 
