@@ -1,0 +1,43 @@
+# Problems to be solved with SQL:
+
+# Supose that I have a table called "assignment_data" with "id","title","features","living_area","total_area","plot_area"
+and "price" columns:
+
+
+- Write a query to extract only listings with a property type “quinta” or “house”
+
+  select *
+  from assignment_data
+  where title like '%quinta%' or title like '%house%'
+
+
+
+- Write a query to extract only listings of properties with a pool
+
+  select *
+  from assignment_data
+  where features like '%pool%'
+
+
+
+- Write a query to extract listings where a property type is not “plot”
+
+  select *
+  from assignment_data
+  where title not like '%plot%'
+
+
+
+- Write a query calculating the average price per square meter of all apartments in Nagüeles
+
+  alter table assignment_data
+  add area smallint
+  
+  update assignment_data
+  set area = (select max(x) from (values (total_area),(living_area)) as x(x))
+    
+  select avg(price/area)
+  from assignment_data
+  where title like '%apartments%' and title like '%Nagueles%'
+
+
