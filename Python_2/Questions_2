@@ -7,7 +7,7 @@ with each property price_per_area.
 
 It was defined that properties are over-valued if their price_per_area is 15% higher than the average price_per_area for similar properties.
 Properties are under-valued if their price_per_area is 15% lower than the average price_per_area for similar properties.
-Then, in between, the are the normal valuated properties.
+Then, in between, are the normal valuated properties.
 
 It was assumed that a flunctuation of 15% over the average price_per_area was the best value to define "under-valued", "over-valued" and 
 "normal" valuations.
