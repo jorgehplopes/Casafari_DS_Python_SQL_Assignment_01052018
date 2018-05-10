@@ -4,12 +4,12 @@ Before that, a pre-processing step was performed, in order to avoid further prob
   - check if there is any empty "title" registers, 
   - lower case the entire "title" column,
   - replace special characters.
-Can be some problems with this procedure if the description of the property was miswrite in the file, p.e., "vila" instead of "villa".
+Can be some problems with this procedure if the description of the property was miswritten in the file, p.e., "vila" instead of "villa".
 
 
 - Classify the location of each listing:
 The procedure was very similar to type classification describe above. The search was also performed over the "title" column.
-Can be some problems with this procedure if the description of the property was miswrite in the file, p.e., "Quinta Marinha" 
+Can be some problems with this procedure if the description of the property was miswritten in the file, p.e., "Quinta Marinha" 
 instead "Quinta da Marinha".
 
 
