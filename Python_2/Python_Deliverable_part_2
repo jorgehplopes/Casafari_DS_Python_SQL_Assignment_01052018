@@ -1,49 +1,8 @@
-#import data from CSV
-df=pd.read_csv('D:/Casafari/assignment_data.csv',sep=',')
-#lower case to title and feature columns to best filter
-df.loc[:,"title"]=df.loc[:,"title"].str.lower()
-df["title"]=df.loc[:,"title"].str.replace("nagüeles","nagueles")
-#create location column
-location=[]   
-for n in list(df.index):
-    if "alenquer" in df.loc[n,"title"]:
-         location.append("Alenquer")
-    elif "quinta da marinha" in df.loc[n,"title"]:
-         location.append("Quinta da Marinha")
-    elif "nagueles" in df.loc[n,"title"]:
-         location.append("Nagüeles")  
-    elif "golden mile" in df.loc[n,"title"]:
-         location.append("Golden Mile")
-      
-df.loc[:,"location"]=location
-#create type column
-type=[]   
-for n in list(df.index):
-    if ("apartment") in df.loc[n,"title"]:
-         type.append("apartments")
-    elif ("penthouse") in df.loc[n,"title"]:
-         type.append("apartments")
-    elif ("duplex") in df.loc[n,"title"]:
-         type.append("apartments")   
-    elif ("house") in df.loc[n,"title"]:
-         type.append("houses")  
-    elif ("villa") in df.loc[n,"title"]:
-         type.append("houses")  
-    elif ("country estate") in df.loc[n,"title"]:
-         type.append("houses")           
-    elif ("moradia") in df.loc[n,"title"]:
-         type.append("houses")           
-    elif ("quinta") in df.loc[n,"title"]:
-         type.append("houses")           
-    elif ("plot") in df.loc[n,"title"]:
-         type.append("plots")           
-    elif ("land") in df.loc[n,"title"]:
-         type.append("plots")
-    else:
-        type.append("other")
-df.loc[:,"type"]=type
-#delete other type registers
-df = df[df.type != "other"]
+##################################### PART 2  #####################################
+
+
+#recover dataset before drop lines with NAN in features column from Part 1
+df=df_aux
 
 
 #add area column
@@ -312,3 +271,4 @@ ax.text(5000, 3.25, 'Plots', fontsize=15)
 plt.xlabel("Price per area", fontsize=14)
 plt.ylabel("Types", fontsize=14)
 plt.suptitle("Price per Area by Types", fontsize=18)
+
