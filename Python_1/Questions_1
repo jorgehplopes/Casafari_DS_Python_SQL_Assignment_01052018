@@ -4,16 +4,16 @@ Before that, a pre-processing step was performed, in order to avoid further prob
   - check if there is any empty "title" registers, 
   - lower case the entire "title" column,
   - replace special characters.
-Can be some problems with this procedure if the description of the property was miswritten in the file, p.e., "vila" instead of "villa".
+Some problems can occur with this procedure if the description of the property was miswritten in the file, p.e., "vila" instead of "villa".
 
 
 - Classify the location of each listing:
 The procedure was very similar to type classification describe above. The search was also performed over the "title" column.
-Can be some problems with this procedure if the description of the property was miswritten in the file, p.e., "Quinta Marinha" 
+Some problems can occur with this procedure if the description of the property was miswritten in the file, p.e., "Quinta Marinha" 
 instead "Quinta da Marinha".
 
 
-- It was decided to delete the registers where "features" is empty, since the goal is to obtain the price impact of ‘pool’, 
-‘sea view’ and ‘garage’ features on properties in each location features, there is no utility to those registers.
+- It was decided to delete the registers where "features" was empty. Since the goal is to obtain the price impact of ‘pool’, 
+‘sea view’ and ‘garage’ features on properties, there is no utility in empty features registers.
 
 
