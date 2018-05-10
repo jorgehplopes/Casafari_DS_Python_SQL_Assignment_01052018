@@ -59,7 +59,7 @@ for n in list(df.index):
     elif ("penthouse") in df.loc[n,"title"]:
          type.append("apartments")
     elif ("duplex") in df.loc[n,"title"]:
-         type.append("apartments")  
+         type.append("apartments")     
     elif ("house") in df.loc[n,"title"]:
          type.append("houses")  
     elif ("villa") in df.loc[n,"title"]:
