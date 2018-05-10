@@ -57,6 +57,11 @@ for n in list(df.index):
 df.loc[:,"area"]=area
 
 
+#drop lines with NAN in area and price column
+df=df.dropna(axis=0, subset=['area'])
+df=df.dropna(axis=0, subset=['price'])
+
+
 #delete all lines with price = 0 and area = 0... it is not usefull for price calculations
 df = df[df.price != 0]
 df = df[df.area != 0]
@@ -141,7 +146,7 @@ deliverable2.columns=["id","location","type","area","price","over-valued (0/1)",
 
 
 #export table to CSV
-df.to_csv('D:/Casafari/deliverable2.csv',sep=',', encoding='utf-8', index=False)
+deliverable2.to_csv('D:/Casafari/deliverable2.csv',sep=',', encoding='utf-8', index=False)
 
 
 #add AUX columns       
@@ -228,7 +233,7 @@ ax.scatter(x12, y12, color='b', s=s, marker='*', alpha=.4, label="Normal")
 
 ax.set_yticklabels([])
 ax.set_xlim(0, max(df.price_area)*1.2)
-legend = ax.legend(loc='left center', fontsize=10)
+legend = ax.legend(loc='upper right', fontsize=10)
 
 ax.text(5000, 1.25, 'Alenquer', fontsize=15)
 ax.text(5000, 2.25, 'Quinta da Marinha', fontsize=15)
@@ -296,7 +301,7 @@ ax.scatter(x7, y7, color='r', s=s, marker='s', alpha=.4, label="Over Valued")
 ax.scatter(x8, y8, color='g', s=s, marker='s', alpha=.4, label="Under Valued")
 ax.scatter(x9, y9, color='b', s=s, marker='s', alpha=.4, label="Normal")
 
-legend = ax.legend(loc='left center', fontsize=10)
+legend = ax.legend(loc='upper right', fontsize=10)
 ax.set_yticklabels([])
 ax.set_xlim(0, max(df.price_area)*1.2)
 
@@ -307,5 +312,3 @@ ax.text(5000, 3.25, 'Plots', fontsize=15)
 plt.xlabel("Price per area", fontsize=14)
 plt.ylabel("Types", fontsize=14)
 plt.suptitle("Price per Area by Types", fontsize=18)
-
-
