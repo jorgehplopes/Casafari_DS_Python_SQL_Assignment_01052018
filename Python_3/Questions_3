@@ -4,7 +4,7 @@ registers for the first exercise.
 
 it was found descriptions in "features" column which include both Nagueles and Golden Mile, p.e., "villa for sale in rocio de nagueles, 
 marbella golden mile" or "contemporary villa in nagueles golden mile".
-Being Nagueles part of a hidder region called Golden Mile, it was decided first classify properties with Nagueles label and then 
+Being Nagueles part of a wider region called Golden Mile, it was decided first classify properties with Nagueles label and then 
 classify the reminding properties with Golden Mile label.
 
 It was found several prices and areas equal to zero. Zero values can cause inconsistencies in divisions such as price_per_area = price / area. 
@@ -12,19 +12,19 @@ It was decided to eliminate those registers. Moreover, prices equal to zero are 
 
 
 2)
-To asses price impact of features such as sea view, pool and garage it is necessary to compare very similar properties (same location,
+To assess price impact of features such as sea view, pool and garage it is necessary to compare very similar properties (same location,
 same type and similar area) with and without the feature under analysis.
 Dataset already has location and type label for each property.
-Next step whould be classify the properties by area. This classification can be done by creating bins and classify each property 
+Next step would be classify the properties by area. This classification can be done by creating bins and classify each property 
 (p.e. 0-25, 25-50, 50-75, 75-100,...)
 Than, for each subset of "location x type x area" calculate the mean price for properties with and without the feature under analysis.
-Due to gread number of intersections to group similar houses, some subset may be very small and no reliable information can be 
+Due to great number of intersections to group similar houses, some subset may be very small and no reliable information can be 
 extracted from them.
-Registers with missing values can be deleted if missing information is essencial to the analysis (p.e. if the location in unknown,
+Registers with missing values can be deleted if missing information is essential to the analysis (p.e. if the location in unknown,
 there is no point in used that register).
 Outliers can be used or deleted. It depends on if that value is correct (unusual but correct) or if is an error (incorrect value input 
 in data file). It is necessary to understand its origin.
-If duplicated data exists (same property listing published by different agencies), those registers have to be merge in a single register.
+If duplicated data exists (same property listing published by different agencies), those registers should be merge in a single register.
 The price value of this new register can be obtained by the average of the duplicated ones.
 
 
